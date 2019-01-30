@@ -11,7 +11,7 @@ import { map, filter } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 @NgModule({
   imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  providers: [HttpClientModule],
+  providers: [ HttpClientModule],
   exports: [FormsModule]
 })
 @Component({
@@ -42,17 +42,11 @@ export class AddProjectComponent implements OnInit {
   public IsEdit = false;
   public ProjectDate: Date;
   public insertResult: any;
-  constructor(
-    private modalServ: BsModalService,
-    private _service: SharedService,
-    public datepipe: DatePipe
-  ) {
-    this._service.GetAllUsers().subscribe(data => (this.listManager = data));
-    this._service
-      .GetAllProjects()
-      .subscribe(data => (this.listProjects = data));
-  }
+  constructor(private modalServ: BsModalService, private _service: SharedService, public datepipe: DatePipe) {
 
+    this._service.GetAllUsers().subscribe(data => this.listManager = data);
+    this._service.GetAllProjects().subscribe(data => this.listProjects = data);
+   }
   ngOnInit() {}
 
   changeCheck(eve): void {

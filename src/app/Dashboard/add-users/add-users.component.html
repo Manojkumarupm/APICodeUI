@@ -2,23 +2,26 @@
 <h3 class="text-warning">Add User</h3>
 <hr>
 <div class="row">
-    <div class="col-xl-12">
-  <ul class="nav nav-pills ">
+  <div class="col-xl-12">
+    <ul class="nav nav-pills ">
       <li class="nav-item">
-            <h4><a routerLink="/add-users" routerLinkActive="active"  >Add User</a></h4>
-          </li>
-          <li class="nav-item" style="padding-left:21px">
-              <h5><a routerLink="/add-projects" class="text-secondary" >Add Project</a></h5>
-            </li>
-    <li class="nav-item" style="padding-left:21px">
-      <h5><a routerLink="/add-task" class="text-secondary"  >Add Task</a></h5>
-    </li>
-    <li class="nav-item" style="padding-left:21px">
-      <h5><a routerLink="/view-task" class="text-secondary"  >View Task</a></h5>
-    </li>
+        <h4><a routerLink="/add-task"  class="text-secondary">Add Task</a></h4>
+      </li>
+      <li class="nav-item" style="padding-left:20px">
+        <h4><a routerLink="/view-task"  class="text-secondary">View Task</a></h4>
+      </li>
+
+      <li class="nav-item" style="padding-left:20px">
+        <h4><a routerLink="/add-users" routerLinkActive="active">Add User</a></h4>
+      </li>
+      <li class="nav-item" style="padding-left:20px">
+        <h4>
+          <a routerLink="/add-project" class="text-secondary">Add Project</a>
+        </h4>
+      </li>
     </ul>
   </div>
-  </div>
+</div>
   <h6 class="alert alert-danger" *ngIf="!IsformValid">All the below fields are mandatory..!</h6>
   <h6 class="alert alert-success" *ngIf="IsAddedSuccessFully">User added successfully...</h6>
   <h6 class="alert alert-success" *ngIf="IsUpdatedSuccessFully">User updated successfully...</h6>

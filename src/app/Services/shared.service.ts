@@ -14,7 +14,7 @@ import { ParentTask } from '../Modules/parent-task';
   providedIn: 'root'
 })
 export class SharedService {
-private _ApiUrl = 'http://localhost:49886/Tasks/api/Task';
+private _ApiUrl = 'http://localhost:49886/api/';
   constructor(private _http: HttpClient) {
 
    }
@@ -37,25 +37,25 @@ UpdateUser(UserId: number, Item: Users): Observable<any> {
 // Users Related Methods End
 // Project Related Method Start
 GetAllProjects(): Observable<Project[]> {
-    return  this._http.get<Project[]>(this._ApiUrl + 'Project').pipe(map(x => x));
+    return  this._http.get<Project[]>(this._ApiUrl + 'Projects/').pipe(map(x => x));
   }
   AddNewProjects(Item: Project): Observable<any> {
-    return this._http.post(this._ApiUrl + 'Project', Item)
+    return this._http.post(this._ApiUrl + 'Projects/', Item)
     .pipe(map(x => x));
   }
 
   UpdateProjects(ProjectId: number, Item: Project): Observable<any> {
-      return  this._http.put(this._ApiUrl + 'Project/' + ProjectId, Item).pipe(map(x => x));
+      return  this._http.put(this._ApiUrl + 'Projects/' + ProjectId, Item).pipe(map(x => x));
     }
  DeleteProjects(ProjectId: number): Observable<any> {
-      return  this._http.delete(this._ApiUrl + 'Project/' + ProjectId).pipe(map(x => x));
+      return  this._http.delete(this._ApiUrl + 'Projects/' + ProjectId).pipe(map(x => x));
     }
 // Project Related Method End
 
 // Task Start
 
 AddNewParentTask(Item: ParentTask): Observable<any> {
-    return this._http.post(this._ApiUrl + 'ParentTask', Item)
+    return this._http.post(this._ApiUrl + 'ParentTask/', Item)
     .pipe(map(x => x));
   }
   GetAllTask(): Observable<TaskInformation[]> {
@@ -84,7 +84,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
 
   // Parent Task Start
   GetAllParentTask(): Observable<ParentTask[]> {
-    return  this._http.get<ParentTask[]>(this._ApiUrl + 'ParentTask').pipe(map(x => x));
+    return  this._http.get<ParentTask[]>(this._ApiUrl + 'ParentTask/').pipe(map(x => x));
 
   }
   // Parent Task End
