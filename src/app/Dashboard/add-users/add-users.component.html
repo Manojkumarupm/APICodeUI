@@ -55,12 +55,12 @@
                    <div class="form-group">
                       <label class="col-md-4 control-label">Employee Id:</label>
                       <div class="col-md-8 inputGroupContainer">
-                         <div class="input-group"><input id="EmpId" [(ngModel)]="EmpId"  name="EmpId" placeholder="Employee Id" class="form-control" maxlength="30" required="true" value="" type="text"></div>
+                         <div class="input-group"><input id="EmployeeId" [(ngModel)]="EmployeeId"  name="EmployeeId" placeholder="Employee Id" class="form-control" maxlength="30" required="true" value="" type="text"></div>
                       </div>
                    </div>
 
-              <div style="padding:20px" *ngIf="!IsEdit" > <button class="btn btn-primary" (click)="AddNewUser(myForm) " (blur)="LoadUsersGrid()" type="submit">Add User</button> &nbsp; &nbsp;<button class="btn btn-info" (click)="ResetUserForm(myForm)" type="button">Reset</button> </div>
-              <div style="padding:20px" *ngIf="IsEdit"> <button class="btn btn-primary" (click)="UpdateUser() " (blur)="LoadUsersGrid()" type="submit">Update User</button> &nbsp; &nbsp;<button class="btn btn-info" (click)="ResetUserForm(myForm)" type="button">Reset</button> </div>
+              <div style="padding:20px" *ngIf="!IsEdit" > <button class="btn btn-primary" (click)="AddNewUser(myForm) " (blur)="LoadUsersGrid()" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Add User</button> &nbsp; &nbsp;<button class="btn btn-info" (click)="ResetUserForm(myForm)" type="button"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button> </div>
+              <div style="padding:20px" *ngIf="IsEdit"> <button class="btn btn-primary" (click)="UpdateUser() " (blur)="LoadUsersGrid()" type="submit"><i class="fa fa-refresh" aria-hidden="true"></i> Update User</button> &nbsp; &nbsp;<button class="btn btn-info" (click)="ResetUserForm(myForm)" type="button"><i class="fa fa-undo" aria-hidden="true"></i> Reset</button> </div>
                 </fieldset>
 
           </td>
@@ -103,7 +103,7 @@
               <td>{{item.UserId}}</td>
               <td>{{item.FirstName}}</td>
               <td>{{item.LastName}}</td>
-              <td>{{item.EmpId}}</td>
+              <td>{{item.EmployeeId}}</td>
 
               <td style="padding-left:0;padding-right:0; margin: 0%"><button class="btn btn-secondary" (click)="EditUserBind(item)"  >Edit</button></td>
               <td style="padding-left:0;padding-right:0;margin: 0%"><button class="btn btn-danger" (click)="DeleteUser(item.UserId)" (blur)="LoadUsersGrid()" >Delete</button></td>

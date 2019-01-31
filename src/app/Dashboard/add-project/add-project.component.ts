@@ -79,7 +79,7 @@ export class AddProjectComponent implements OnInit {
               item =>
                 item.FirstName.toUpperCase() === Searchdetail.toUpperCase() ||
                 item.LastName.toUpperCase() === Searchdetail.toUpperCase() ||
-                item.EmpId.toUpperCase() === Searchdetail.toUpperCase() ||
+                item.EmployeeId.toUpperCase() === Searchdetail.toUpperCase() ||
                 item.UserId.toString() === Searchdetail
             ))
         );

@@ -199,7 +199,7 @@ export class AddTaskComponent implements OnInit {
     if (Searchdetail !== undefined && Searchdetail.length !== 0) {
       // tslint:disable-next-line:max-line-length
       this._service.GetAllUsers().subscribe(data => this.listUser = data.filter(item => item.FirstName.toUpperCase() === Searchdetail.toUpperCase() || item.LastName.toUpperCase() === Searchdetail.toUpperCase()
-        || item.EmpId.toUpperCase() === Searchdetail.toUpperCase() || item.UserId.toString() === Searchdetail));
+        || item.EmployeeId.toUpperCase() === Searchdetail.toUpperCase() || item.UserId.toString() === Searchdetail));
 
     } else {
       this._service.GetAllUsers().subscribe(data => this.listUser = data);

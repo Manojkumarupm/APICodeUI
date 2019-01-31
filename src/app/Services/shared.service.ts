@@ -29,33 +29,33 @@ AddNewUser(Item: Users): Observable<any> {
 }
 
 UpdateUser(UserId: number, Item: Users): Observable<any> {
-    return  this._http.put(this._ApiUrl + 'User/' + UserId, Item).pipe(map(x => x));
+    return  this._http.put(this._ApiUrl + 'User' + UserId, Item).pipe(map(x => x));
   }
   DeleteUser(UserId: number): Observable<any> {
-    return  this._http.delete(this._ApiUrl + 'User/' + UserId).pipe(map(x => x));
+    return  this._http.delete(this._ApiUrl + 'User' + UserId).pipe(map(x => x));
   }
 // Users Related Methods End
 // Project Related Method Start
 GetAllProjects(): Observable<Project[]> {
-    return  this._http.get<Project[]>(this._ApiUrl + 'Projects/').pipe(map(x => x));
+    return  this._http.get<Project[]>(this._ApiUrl + 'Projects').pipe(map(x => x));
   }
   AddNewProjects(Item: Project): Observable<any> {
-    return this._http.post(this._ApiUrl + 'Projects/', Item)
+    return this._http.post(this._ApiUrl + 'Projects', Item)
     .pipe(map(x => x));
   }
 
   UpdateProjects(ProjectId: number, Item: Project): Observable<any> {
-      return  this._http.put(this._ApiUrl + 'Projects/' + ProjectId, Item).pipe(map(x => x));
+      return  this._http.put(this._ApiUrl + 'Projects' + ProjectId, Item).pipe(map(x => x));
     }
  DeleteProjects(ProjectId: number): Observable<any> {
-      return  this._http.delete(this._ApiUrl + 'Projects/' + ProjectId).pipe(map(x => x));
+      return  this._http.delete(this._ApiUrl + 'Projects' + ProjectId).pipe(map(x => x));
     }
 // Project Related Method End
 
 // Task Start
 
 AddNewParentTask(Item: ParentTask): Observable<any> {
-    return this._http.post(this._ApiUrl + 'ParentTask/', Item)
+    return this._http.post(this._ApiUrl + 'ParentTask', Item)
     .pipe(map(x => x));
   }
   GetAllTask(): Observable<TaskInformation[]> {
@@ -63,7 +63,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
 
   }
   GetTask(TaskId: number): Observable<TaskInformation> {
-    return  this._http.get<TaskInformation>(this._ApiUrl + '?TaskId=' + TaskId).pipe(map(x => x));
+    return  this._http.get<TaskInformation>(this._ApiUrl + 'Task?TaskId=' + TaskId).pipe(map(x => x));
 
   }
   AddNewTask(task: TaskInformation): Observable<any> {
@@ -71,7 +71,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
     .pipe(map(x => x));
   }
   UpdateTask(TaskId: number, task: TaskInformation): Observable<any> {
-    return  this._http.put(this._ApiUrl + '/' + TaskId, task).pipe(map(x => x));
+    return  this._http.put(this._ApiUrl + 'Task' + TaskId, task).pipe(map(x => x));
   }
 
   CompleteTaskFlagUpdate(task: TaskInformation): Observable<any> {
@@ -84,7 +84,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
 
   // Parent Task Start
   GetAllParentTask(): Observable<ParentTask[]> {
-    return  this._http.get<ParentTask[]>(this._ApiUrl + 'ParentTask/').pipe(map(x => x));
+    return  this._http.get<ParentTask[]>(this._ApiUrl + 'ParentTask').pipe(map(x => x));
 
   }
   // Parent Task End
