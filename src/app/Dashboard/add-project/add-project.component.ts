@@ -288,6 +288,7 @@ export class AddProjectComponent implements OnInit {
       this.IsAddedSuccessFully = false;
     }
     window.scroll(0, 0);
+    this.LoadProjectGrid();
   }
 
   DeleteProject(ProjectId: number): void {

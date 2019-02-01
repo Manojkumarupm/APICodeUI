@@ -29,7 +29,7 @@ AddNewUser(Item: Users): Observable<any> {
 }
 
 UpdateUser(UserId: number, Item: Users): Observable<any> {
-    return  this._http.put(this._ApiUrl + 'User' + UserId, Item).pipe(map(x => x));
+    return  this._http.put(this._ApiUrl + 'User?UserId=' + UserId, Item).pipe(map(x => x));
   }
   DeleteUser(UserId: number): Observable<any> {
     return  this._http.delete(this._ApiUrl + 'User' + UserId).pipe(map(x => x));
@@ -45,7 +45,7 @@ GetAllProjects(): Observable<Project[]> {
   }
 
   UpdateProjects(ProjectId: number, Item: Project): Observable<any> {
-      return  this._http.put(this._ApiUrl + 'Projects' + ProjectId, Item).pipe(map(x => x));
+      return  this._http.put(this._ApiUrl + 'Projects?ProjectId='+ ProjectId, Item).pipe(map(x => x));
     }
  DeleteProjects(ProjectId: number): Observable<any> {
       return  this._http.delete(this._ApiUrl + 'Projects' + ProjectId).pipe(map(x => x));
@@ -71,7 +71,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
     .pipe(map(x => x));
   }
   UpdateTask(TaskId: number, task: TaskInformation): Observable<any> {
-    return  this._http.put(this._ApiUrl + 'Task' + TaskId, task).pipe(map(x => x));
+    return  this._http.put(this._ApiUrl + 'Task?TaskId=' + TaskId, task).pipe(map(x => x));
   }
 
   CompleteTaskFlagUpdate(task: TaskInformation): Observable<any> {

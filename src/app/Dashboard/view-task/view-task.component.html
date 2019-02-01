@@ -139,12 +139,12 @@
     <tr *ngFor="let item of tasks; trackBy: TrackTask">
       <td >{{ item.TaskId }}</td>
       <td >{{ item.TaskDescription }}</td>
-      <th >{{item.ParentId}}</th>
+      <td> {{ item.ParentId }}</td>
       <td >{{ item.ProjectId }}</td>
       <td >{{ item.Priority }}</td>
       <td >{{ item.StartDate | date: "MM-dd-yyyy" }}</td>
       <td>{{ item.EndDate | date: "MM-dd-yyyy" }}</td>
-      <th >UserId</th>
+      <td >{{ item.UserId }}</td>
       <td style="padding-left:0;padding-right:0;">
         <a routerLink="/update-task/{{ item.TaskId }}"
           ><button

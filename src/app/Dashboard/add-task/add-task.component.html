@@ -67,7 +67,7 @@
               <label class="col-md-4 control-label">Parent Task Id:</label>
               <div class="col-md-8 inputGroupContainer">
                  <div class="input-group"><input id="ParentTask" [disabled]="Ischecked" [(ngModel)]="ParentId"  #ParentTask name="ParentTask" placeholder="Parent Task Id" readonly class="form-control" required="true" value="" type="number">
-                   <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openParenttaskModal(tempParentTask)" >search</button>   </div>
+                   <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openParenttaskModal(tempParentTask)" ><i class="fa fa-search" aria-hidden="true"></i> search</button>   </div>
               </div>
            </div>
             <div class="form-group">
@@ -89,7 +89,7 @@
               <label class="col-md-4 control-label">UserId:</label>
               <div class="col-md-8 inputGroupContainer">
                   <div class="input-group">
-           <input id="UserId" [(ngModel)]="UserId"   name="UserId"  class="form-control" required="true" readonly  disabled type="number" > <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openUserModal(tempUser)" >search</button>    </div>
+           <input id="UserId" [(ngModel)]="UserId"   name="UserId"  class="form-control" required="true" readonly  disabled type="number" > <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openUserModal(tempUser)" ><i class="fa fa-search" aria-hidden="true"></i> search</button>    </div>
            </div>
           </div>
             <div style="padding:20px">

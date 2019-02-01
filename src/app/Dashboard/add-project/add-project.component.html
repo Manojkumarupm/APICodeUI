@@ -190,7 +190,7 @@
                 (blur)="LoadProjectGrid()"
                 type="submit"
               >
-                Update Project
+              <i class="fa fa-refresh" aria-hidden="true"></i>  Update Project
               </button>
               &nbsp; &nbsp;<button
                 class="btn btn-warning"
@@ -263,7 +263,7 @@
         <td>{{ item.ManagerUserId }}</td>
         <td style="padding-left:0;padding-right:0; margin: 0%">
           <button class="btn btn-secondary" (click)="EditProjectBind(item)">
-            Update
+            <i class="fa fa-refresh" aria-hidden="true"></i> Update
           </button>
         </td>
         <td style="padding-left:0;padding-right:0;margin: 0%">
@@ -272,7 +272,7 @@
             (click)="DeleteProject(item.ProjectId)"
             (blur)="LoadProjectGrid()"
           >
-            Suspend
+          <i class="fa fa-pause" aria-hidden="true"></i> Suspend
           </button>
         </td>
       </tr>
