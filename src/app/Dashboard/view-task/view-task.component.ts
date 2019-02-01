@@ -37,7 +37,7 @@ export class ViewTaskComponent implements OnInit {
   CompleteTaskFlagchange(Item: TaskInformation): void {
     let updateResult: any;
     Item.IsTaskCompleted = 1;
-    this._service.CompleteTaskFlagUpdate(Item).subscribe(data => updateResult = data);
+    this._service.CompleteTaskFlagUpdate(Item.TaskId,Item).subscribe(data => updateResult = data);
     this._service.GetAllTask().subscribe(data => this.tasks = data);
     alert('Task has been marked as End..!');
   }
