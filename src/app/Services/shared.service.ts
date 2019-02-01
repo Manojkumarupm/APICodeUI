@@ -78,7 +78,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
     return  this._http.put(this._ApiUrl + 'Task?TaskId=' + TaskId, task).pipe(map(x => x));
   }
   DeleteTask(TaskId: number): Observable<any> {
-    return  this._http.delete(this._ApiUrl + '/' + TaskId).pipe(map(x => x));
+    return  this._http.delete(this._ApiUrl + 'Task?TaskId=' + TaskId).pipe(map(x => x));
   }
   // Task End
 
