@@ -59,7 +59,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
     .pipe(map(x => x));
   }
   GetAllTask(): Observable<TaskInformation[]> {
-    return  this._http.get<TaskInformation[]>(this._ApiUrl).pipe(map(x => x));
+    return  this._http.get<TaskInformation[]>(this._ApiUrl + 'Task').pipe(map(x => x));
 
   }
   GetTask(TaskId: number): Observable<TaskInformation> {
@@ -67,7 +67,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
 
   }
   AddNewTask(task: TaskInformation): Observable<any> {
-    return this._http.post(this._ApiUrl, task)
+    return this._http.post(this._ApiUrl + 'Task', task)
     .pipe(map(x => x));
   }
   UpdateTask(TaskId: number, task: TaskInformation): Observable<any> {
@@ -75,7 +75,7 @@ AddNewParentTask(Item: ParentTask): Observable<any> {
   }
 
   CompleteTaskFlagUpdate(task: TaskInformation): Observable<any> {
-    return  this._http.put(this._ApiUrl, task).pipe(map(x => x));
+    return  this._http.put(this._ApiUrl + 'Task', task).pipe(map(x => x));
   }
   DeleteTask(TaskId: number): Observable<any> {
     return  this._http.delete(this._ApiUrl + '/' + TaskId).pipe(map(x => x));

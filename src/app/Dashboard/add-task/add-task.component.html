@@ -21,9 +21,10 @@
     </ul>
   </div>
 </div>
-
 <h6 class="alert alert-danger" *ngIf="!IsformValid">All the below fields are mandatory..!</h6>
-<h6 class="alert alert-success" *ngIf="IsAddedSuccessFully">Task added successfully...</h6>
+  <h6 class="alert alert-success" *ngIf="IsAddedSuccessFully">Task added successfully...</h6>
+  <h6 class="alert alert-success" *ngIf="IsParentAddedSuccessFully">Parent Task added successfully...</h6>
+  <h6 class="alert alert-danger" *ngIf="IsStartDateGreater">Start date should not be greaterthan End date..!</h6>
 <table class="table table-striped" style="background-color:lightcyan;">
   <tbody>
     <tr>
@@ -44,6 +45,15 @@
                     class="form-control" required="true" value="" type="text"></div>
               </div>
             </div>
+            <div class="form-group" >
+
+              <div class="col-md-4 inputGroupContainer">
+                 <div class="input-group">
+                   <input id="ParentTaskCheck" name="ParentTaskCheck" class="form-control" (change)="changeCheck($event)"   type="checkbox">
+                   <label class="control-label">Parent Task</label></div>
+              </div>
+
+           </div>
             <div class="form-group">
               <label class="col-md-4 control-label">Priority</label>
               <div class="col-md-8 inputGroupContainer">
@@ -56,10 +66,10 @@
             <div class="form-group">
               <label class="col-md-4 control-label">Parent Task Id:</label>
               <div class="col-md-8 inputGroupContainer">
-                <div class="input-group"><input id="ParentTask" [(ngModel)]="ParentId" #ParentTask name="ParentTask"
-                    placeholder="Parent Task Id" class="form-control" required="true" value="" type="number"></div>
+                 <div class="input-group"><input id="ParentTask" [disabled]="Ischecked" [(ngModel)]="ParentId"  #ParentTask name="ParentTask" placeholder="Parent Task Id" readonly class="form-control" required="true" value="" type="number">
+                   <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openParenttaskModal(tempParentTask)" >search</button>   </div>
               </div>
-            </div>
+           </div>
             <div class="form-group">
               <label class="col-md-4 control-label">Start Date:</label>
               <div class="col-md-8 inputGroupContainer">
@@ -75,7 +85,13 @@
                     required="true" value="" type="date"></div>
               </div>
             </div>
-
+            <div class="form-group">
+              <label class="col-md-4 control-label">UserId:</label>
+              <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+           <input id="UserId" [(ngModel)]="UserId"   name="UserId"  class="form-control" required="true" readonly  disabled type="number" > <button [disabled]="Ischecked" style="float:right; padding:3px;" class="btn btn-secondary"  type="button" (click)="openUserModal(tempUser)" >search</button>    </div>
+           </div>
+          </div>
             <div style="padding:20px">
               <button class="btn btn-primary" (click)="AddNewTaskInformation(myForm)" type="submit">
                   <i class="fa fa-floppy-o" aria-hidden="true"></i> Add Task</button>
@@ -103,11 +119,13 @@
        <h6 class="text text-success" *ngIf="IsProjectSelected">Project is selected successfully...</h6>
        <div class="row">
            <div class="col-md-6">
-              <div class="input-group"><input id="txtSearchProject" name="txtSearchProject" #txtSearchProject (keyup)="SearchProjectFilter(txtSearchProject.value)"  placeholder="Search..." class="form-control"  value="" type="text"></div>
+              <div class="input-group"><input id="txtSearchProject" name="txtSearchProject" #txtSearchProject (keyup)="SearchProjectFilter(txtSearchProject.value)"  placeholder="Search..." class="form-control"  value="" type="text">
+              </div>
           </div>
           </div>
           <br>
-          <table class="table" >
+          <div class="row">
+          <table class="table">
                 <thead>
                     <tr>
                       <th scope="col">ProjectId</th>
@@ -127,6 +145,7 @@
                       </tr>
                     </tbody>
                   </table>
+                </div>
 
     </div>
    </ng-template>
